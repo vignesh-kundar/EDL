@@ -1,0 +1,115 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    
+      
+}
+body{
+    background: linear-gradient(249.79deg, rgba(85, 13, 238, 0.2) 16.69%, rgba(85, 13, 238, 0.2) 16.69%, rgba(97, 79, 207, 0.2) 85.82%), linear-gradient(90deg, #171717 1.52%, rgba(109, 77, 111, 0.81) 100%);
+}
+.navigation {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 80px
+}
+.navContainer1,.navContainer2
+{
+    display: flex;
+}
+
+.navicon{
+    color: #fff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 50px;    
+    letter-spacing: 0.1em;
+}
+.navicon a{
+    color: #fff;
+    text-decoration: none;
+}
+.nb1{
+    padding-left: 100px;
+    padding-right:15px ;
+}
+.nb2{
+    border-left: 0.5px solid white; 
+    padding-left:15px ;    
+}
+.na1{
+    padding-right: 30px;
+}
+.nb1:hover{
+    text-decoration: underline;
+}
+.nb2:hover{
+    text-decoration: underline;
+}
+.na2:hover{
+    text-decoration: underline;
+}
+.na1:hover{
+    text-decoration: underline;
+}
+.bodyTag
+{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.drag-area:hover{
+    opacity: 100%;
+}
+.drag-area
+    {
+    opacity: 60%;
+    border: 2px dashed #fff;
+    height: 375px;
+    width: 525px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .drag-area.active{
+    border: 2px solid #fff;
+  }
+  .drag-area .icon{
+    font-size: 100px;
+    color: #fff;
+  }
+  .drag-area header{
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .drag-area span{
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+  }
+  .drag-area button{
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #5256ad;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .drag-area img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
