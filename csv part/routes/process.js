@@ -1,9 +1,16 @@
 const csv = require('csv-parser')
+const router = require('express').Router();
+
+
 const fs = require('fs')
 const results = [];
 const valid=[];
 const invalid=[];
 
+router.get('/upload',(req,res)=>
+{
+	res.send("siccess")
+})
 
 // ----------------------------------------------------- validation of email :) ---------------------------------------------------------------------------
 function ValidateEmail(inputText) {
@@ -88,44 +95,7 @@ fs.createReadStream('data.csv')
   // console.log("\n invalid:",invalid)
 }
 
-// Validation ends here --------------------------------------------------------------------------------------------------------------------
 
-// mail part----------------------------------------------------------------------------------------------------------------------------------
-const nodemailer = require('nodemailer');
-const MailMessage = require('nodemailer/lib/mailer/mail-message');
+// express
 
-var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: "doejohn66779@gmail.com",
-        pass: "Vignesh@125"
-    }
-});
-
-
-
-var mailOptions = {
-    from: 'john doe',
-    to: valid,
-    subject: 'Impo Notice 🫡',
-    text: `Testing one 2 three`,
-    html: `
-    <h2>Just wanted to say that you are not homosapiens!!</h2>
-    <img src="https://media.giphy.com/media/g7GKcSzwQfugw/giphy.gif"></img>
-    <p>😶‍🌫️</p>
-    `
-};
-
-transporter.sendMail(mailOptions, function(err, info) {
-    if (err) {
-        console.log(err);
-    } else {
-      console.log(valid)
-        console.log("\n------->");
-        console.log("\npending"+info.pending)
-        console.log("\nrejected"+info.rejected)
-        console.log("\naccepted"+info.accepted)
-        console.log("Mail sent🫡 \n" + info.response);
-        console.log("------->\n");
-    }
-});
+module.exports = router;

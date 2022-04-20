@@ -1,35 +1,27 @@
-const nodemailer = require('nodemailer');
-const MailMessage = require('nodemailer/lib/mailer/mail-message');
+const express = require('express')
+const router = require('express').Router();
+const app = express()
+app.set('view engine', 'ejs')
 
-var transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: "doejohn66779@gmail.com",
-        pass: "Vignesh@125"
-    }
+// app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+// public set
+app.use(express.static('public'))
+app.use('/css', express.static(__dirname + 'public/css'))
+app.use('/routes', express.static(__dirname + '/routes'))
+app.use('/js', express.static(__dirname + 'public/js'))
+app.use('/img', express.static(__dirname + 'public/img'))
+
+app.get('/', function(request, response) {
+    response.render('index')
 });
 
-const mails = ['paramashivakaranth@gmail.com', 'udithbkl100@gmail.com', 'bekalpranay@gmail.com', 'vigneshkundar125@gmail.com', 'vigneshkundar@outlook.com'];
+const upload = require('./routes/upload')
+
+app.use('/fileupload',upload)
 
 
-var mailOptions = {
-    from: 'john doe',
-    to: mails,
-    subject: 'Impo Notice 🫡',
-    text: `hey this is an test mail.`,
-    html: `
-    <h2>Just wanted to say that you are not homosapiens!!</h2>
-    <img src="https://media.giphy.com/media/g7GKcSzwQfugw/giphy.gif"></img>
-    <p>😶‍🌫️</p>
-    `
-};
-
-transporter.sendMail(mailOptions, function(err, info) {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log("\n------->");
-        console.log("Mail sent🫡 \n" + info.response);
-        console.log("------->\n");
-    }
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });

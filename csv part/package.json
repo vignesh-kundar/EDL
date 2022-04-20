@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "formidable": "^2.0.1",
+    "mv": "^2.1.1"
   }
 }
