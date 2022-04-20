@@ -91,6 +91,8 @@ async function res(r) {
 
 //==>                       < == NODE MAILER == >
 var transporter = nodemailer.createTransport({
+    pool: true,
+    maxConnections: 10,
     service: "gmail",
     auth: {
         user: process.env.EMAIL,
@@ -112,19 +114,26 @@ var mailOptions = {
     `
 };
 
+
+
 transporter.sendMail(mailOptions, function(err, info) {
     if (err) {
         console.log(err);
     } else {
         console.log(valid)
         console.log("\n------->");
-        console.log("\npending" + info.pending)
-        console.log("\nrejected" + info.rejected)
-        console.log("\naccepted" + info.accepted)
+        console.log("\npending emails : \n" + info.pending);
+        console.log("\n------->");
+        console.log("\nrejected : \n" + info.rejected);
+        console.log("\n------->");
+        console.log("\naccepted : \n" + info.accepted);
+        console.log("\n------->");
         console.log("Mail sent🫡 \n" + info.response);
         console.log("------->\n");
     }
 });
+
+
 //==>               <== Node mailer ends ==>
 
 
