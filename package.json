@@ -1,19 +1,17 @@
 {
-    "name": "exposys",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "run": "node app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "csv-parser": "^3.0.0",
-        "dotenv": "^16.0.0",
-        "ejs": "^3.1.6",
-        "express": "^4.17.3",
-        "nodemailer": "^6.7.3"
-    }
+  "name": "exposys",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemailer": "^6.7.3"
+  }
 }

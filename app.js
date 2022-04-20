@@ -1,16 +1,5 @@
 const express = require('express');
 const ejs = require('ejs');
-const csv = require('csv-parser')
-const fs = require('fs')
-const MailMessage = require('nodemailer/lib/mailer/mail-message')
-const nodemailer = require('nodemailer')
-require('dotenv').config()
-
-
-//==>               == arrays ==
-const results = [];
-const valid = [];
-const invalid = [];
 
 
 const app = express();
@@ -143,5 +132,7 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3000, err => {
-    if (!err) {}
+    if (!err) {
+        console.log("listening on port 3000...");
+    }
 })
