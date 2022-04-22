@@ -1,1 +1,1 @@
-HEHE BOI
+Namaskara Mangaluru

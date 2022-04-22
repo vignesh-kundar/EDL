@@ -2,49 +2,51 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>EXposys Data Labs</title>
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="/style.css">
+
+    <title>Top Scerete🫡</title>
 </head>
 
 <body>
 
-    <nav class="navigation">
-
-        <div class="navContainer1">
-            <p class="navicon na1"><a href="#">Home</a></p>
-            <p class="navicon na2"> <a href="#">About us</a></p>
+    <nav>
+        <h2>Bulk<span>Mailer</span></h2>
+        <div class="nav-login-signup-container">
+            <ul>
+                <li>Login</li>
+                <li>Sign-up</li>
+            </ul>
         </div>
-
-        <div class="navContainer2">
-            <p class="navicon nb1"> <a href="#">Login</a></p>
-            <p class="navicon nb2"> <a href="#">Sign Up</a></p>
-        </div>
-
     </nav>
 
+    <!-- main container -->
+    <div class="container">
 
-
-    <div class="bodyTag">
-
-        <div class="drag-area">
-            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <header>Drag & Drop to Upload File</header>
-            <span>OR</span>
-            <button>Browse File</button>
-            <input type="file" hidden>
+        <div class="upload-container">
+            <form action="/fileupload" method="post" enctype="multipart/form-data">
+                <!-- file-input-div -->
+                <div class="file-input-div">
+                    <input type="file" name="filetoupload" id="" ">
+                </div>
+               
+                <button type="submit ">Submit</button>
+            </form>
         </div>
 
-    </div>
+        <!-- end of main container -->
 
-    <script src="index.js"></script>
+
+        <!-- Bubbles -->
+
+
+        </script>
+
+
+
 </body>
 
 </html>

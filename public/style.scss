@@ -1,0 +1,92 @@
+    body {
+        background: #20002c;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #cbb4d4, #20002c);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        box-sizing: border-box;
+        margin: 0;
+        position: inherit;
+        z-index: 0;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.10);
+        h2 {
+            margin: 0 40px;
+            color: blue;
+            span {
+                color: red;
+            }
+        }
+        h2::after {
+            content: "beta";
+            font-size: 10px;
+            margin: 5px;
+        }
+        .nav-login-signup-container {
+            margin-right: 40px;
+            ul {
+                display: flex;
+                li {
+                    list-style: none;
+                    font-size: 1.5rem;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    
+    .container {
+        position: inherit;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .upload-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15vh;
+            height: 50vh;
+            width: 60vw;
+            background-color: rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+            backdrop-filter: blur(20px);
+            border-top: .5px solid rgba(255, 255, 255, 0.5);
+            border-left: .5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
+            .file-input-div {
+                input[type="file"]::file-selector-button {
+                    padding: 10px;
+                    background-color: rgba(255, 255, 255, 0.453);
+                    border: none;
+                    color: #fff;
+                    border-radius: 10px;
+                    cursor: pointer;
+                    border-top: .5px solid rgba(255, 255, 255, 0.5);
+                    border-left: .5px solid rgba(255, 255, 255, 0.5);
+                    font-family: poppins;
+                    font-weight: bold;
+                }
+                input[type="file"] {
+                    cursor: pointer;
+                }
+            } //input-file-div-ends here
+            button {
+                background-color: royalblue;
+                border: none;
+                border-radius: 10px;
+                padding: 10px 20px;
+                margin: 40px;
+            }
+        }
+    }
+    
+    @import 'bubbles';
