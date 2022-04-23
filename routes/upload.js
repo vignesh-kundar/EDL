@@ -2,15 +2,20 @@ const router = require('express').Router();
 var formidable = require('formidable');
 var fs = require('fs');
 const csv = require('csv-parser');
+
 //arrays
 const results = [];
 const valid = [];
 const invalid = [];
 
+const objecta = {};
+const time = new Date();
+
 //fileupload route
+
 router.post('/', (function(req, res) {
 
-    // if (req.url == '/') {
+
     var form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
         var oldpath = files.filetoupload.filepath;
@@ -18,12 +23,12 @@ router.post('/', (function(req, res) {
         const mv = require('mv');
         mv(oldpath, newpath, function(err) {
             if (err) {
-                console.log('> FileServer.jsx | route: "/files/upload" | err:', err);
+                console.log('> FileServer.jsx | route: "/files/upload" | err : ', err);
                 throw err;
 
             } else {
 
-                res.write(`<b style="font-size:2rem;text-align:center;font-family:poppins;color: lightgreen;margin: 40px;">File uploaded and moved!</b>`);
+                res.write(`<b style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">File uploaded and moved!</b>`);
                 // ValidateEmail('udithbkl100@gmail.com');
 
                 csv({
@@ -55,7 +60,6 @@ router.post('/', (function(req, res) {
                                 .pipe(csv({
 
                                     mapHeaders: ({ header, A }) =>
-
                                         header.replace(header, "email")
                                 }))
                                 .on('data', (data) => results.push(data.email))
@@ -72,7 +76,10 @@ router.post('/', (function(req, res) {
             }
         });
     });
-    //}
+
+    // res.render('output', { Valid: valid, Invalid: invalid, Info: info });
+
+
 }))
 
 
@@ -101,11 +108,19 @@ async function ress(r) {
     }
 
     console.log("valid :", valid)
-    sendmail(valid);
     console.log("\n invalid:", invalid)
+    sendmail(valid);
+    print(valid, invalid);
 }
 //   end here
 
+function print(v, i) {
+    console.log("\n==>\n");
+    console.log("================================================");
+    console.log("Valid : ", v, "\n\nInvaid : ", i);
+    console.log("================================================");
+    console.log("\n==>\n");
+}
 
 // NODE MAILER 
 function sendmail(valid) {
@@ -113,30 +128,37 @@ function sendmail(valid) {
     const nodemailer = require('nodemailer');
     //const MailMessage = require('nodemailer/lib/mailer/mail-message');
 
+
+
     var transporter = nodemailer.createTransport({
-        service: "hotmail",
+        pool: true,
+        maxMessages: 10000,
+        maxConnections: 10,
+        service: "gmail",
         auth: {
-            user: "supercheem05@outlook.com",
-            pass: "SuperCheem#123"
+            // user: "doejohn66779@gmail.com",
+            // pass: "Vignesh@125"
+            // user: "cheemsuper3@gmail.com",
+            // pass: "gulugulu#123"
+            user: "vignesh0405kundar@gmail.com",
+            pass: "Vignesh@125"
         }
     });
     var mailOptions = {
-        from: 'john doe',
+        from: 'Bot',
         to: valid,
         subject: 'Important Notice',
         text: `Testing one 2 three`,
 
-        //     html: `
-        // <h2>Just wanted to say that you are not homosapiens!!</h2>
-        // <img src="https://media.giphy.com/media/g7GKcSzwQfugw/giphy.gif"></img>
-        // <p>😶‍🌫️</p>
-        // `
+        html: `<img src="https://media.giphy.com/media/OjI3iowbHLmoY7n98e/giphy.gif"></img>
+        <h2 style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">Message sent at : ${time} </h2>`
     };
 
     transporter.sendMail(mailOptions, function(err, info) {
         if (err) {
             console.log(err);
         } else {
+            objecta = info;
             console.log(valid)
             console.log("\n------->");
             console.log("\npending" + info.pending)
@@ -144,14 +166,10 @@ function sendmail(valid) {
             console.log("\naccepted" + info.accepted)
             console.log("Mail sent🫡 \n" + info.response);
             console.log("------->\n");
+
         }
     });
 }
-
-//   =-----------------------------------------------------------------------------------------------------------------------
-
-
-
 
 
 module.exports = router;

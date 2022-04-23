@@ -17,8 +17,8 @@
         <h2>Bulk<span>Mailer</span></h2>
         <div class="nav-login-signup-container">
             <ul>
-                <li>Login</li>
-                <li>Sign-up</li>
+                <li><a class="hover-underline-animation" href="#">Login</a></li>
+                <li><a class="hover-underline-animation" href="#">Sign-up</a></li>
             </ul>
         </div>
     </nav>
@@ -27,23 +27,64 @@
     <div class="container">
 
         <div class="upload-container">
+
+            <div class="text-div">
+                <h2>Add your .csv File</h2>
+            </div>
+
+
             <form action="/fileupload" method="post" enctype="multipart/form-data">
                 <!-- file-input-div -->
+
                 <div class="file-input-div">
                     <input type="file" name="filetoupload" id="" ">
                 </div>
+               <div class="btn-container ">
+                <button class="btn-4 " type="submit ">Submit</button>
+               </div>
                
-                <button type="submit ">Submit</button>
             </form>
+
         </div>
 
         <!-- end of main container -->
 
 
         <!-- Bubbles -->
+      
+        <ul class='circles'>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        
+        <script>
+            jQuery(document).ready(function() {
+                jQuery(".container-wrap ").append(
+                    `<ul class='circles'>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    </ul>` ); });
+                    </script>
 
 
-        </script>
+
+
 
 
 
