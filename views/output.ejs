@@ -5,34 +5,46 @@
     <div class="output-container">
 
         <!-- valid div -->
-        <div class="valid-container val-inv">
-            <h3>Valid mails</h3>
-            <% V.forEach(vdata => { %>
-                <div class="data">
-                    <p>
-                        <%= vdata %>
-                    </p>
-                </div>
-                <%}) %>
+        <div class="valid-container">
+            <div class="val-inv">
+                <h3>Valid mails</h3>
+                <% V.forEach(vdata => { %>
+                    <div class="data">
+                        <p>
+                            <%= vdata %>
+                        </p>
+                    </div>
+                    <%}) %>
 
 
+            </div>
+            <p>Valid Email Count :
+                <%= V.length%>
+            </p>
         </div>
-        <p>count :</p>
+
 
 
         <!-- invalid-div -->
-        <div class="invalid-container val-inv">
-            <h3>Invalid mails</h3>
-            <% I.forEach(idata => { %>
-                <div class="data">
-                    <p>
-                        <%= idata %>
-                    </p>
-                </div>
-                <%}) %>
+        <div class="invalid-container">
+
+            <div class="val-inv">
+                <h3>Invalid mails</h3>
+                <% I.forEach(idata => { %>
+                    <div class="data">
+                        <p>
+                            <%= idata %>
+                        </p>
+                    </div>
+                    <%}) %>
+
+            </div>
+            <p>Invalid Email Count :
+                <%= I.length %>
+            </p>
 
         </div>
-        <p>count :</p>
+
 
 
 

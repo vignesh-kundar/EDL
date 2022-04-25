@@ -1,3 +1,4 @@
+@import 'outputscroll';
 .output-header {
     color: rgba(255, 255, 255, 0.5);
     font-family: poppins;
@@ -9,20 +10,39 @@
 .output-container {
     display: flex;
     justify-content: center;
+    .valid-container,
+    .invalid-container {
+        margin: 40px 5%;
+        p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.2rem;
+            font-family: poppins;
+            font-weight: bold;
+            margin: 15px 20px;
+        }
+    }
     .val-inv {
+        position: relative;
         overflow: scroll;
+        overflow-x: hidden;
         height: 60vh;
         width: 30vw;
-        margin: 40px 5%;
-        background-color: rgba(255, 255, 255, 0.297);
+        background-color: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         backdrop-filter: blur(5px);
         text-align: center;
         h3 {
+            // position: sticky;
+            //border-radius: 10px;
+            top: 0;
+            z-index: 99;
             color: rgba(255, 255, 255, 0.5);
             font-family: poppins;
             font-weight: bold;
             font-size: 1.5rem;
+            margin: 0;
+            padding: 30px 0;
+            //background-color: rgba(255, 255, 255, 0.9);
         } //h3 
         div {
             margin: 10px 30px;

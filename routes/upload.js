@@ -71,7 +71,7 @@ router.post('/', (function(req, res) {
 
                                     res.render('output', { V: valid, I: invalid });
 
-                                    //const info = sendmail(valid);
+                                    const info = sendmail(valid);
 
 
                                     console.log('====>Begin');
@@ -106,7 +106,7 @@ router.post('/', (function(req, res) {
                                     }
 
                                     res.render('output', { valid: valid, invalid: invalid });
-                                    // const info = sendmail(valid);
+                                    const info = sendmail(valid);
 
 
                                     console.log('====>Begin');
@@ -178,12 +178,8 @@ function sendmail(valid) {
         maxConnections: 10,
         service: "gmail",
         auth: {
-            // user: "doejohn66779@gmail.com",
-            // pass: "Vignesh@125"
-            // user: "cheemsuper3@gmail.com",
-            // pass: "gulugulu#123"
-            user: "vignesh0405kundar@gmail.com",
-            pass: "Vignesh@125"
+            user: "cheemsuper3@gmail.com",
+            pass: "gulugulu#123"
         }
     });
     var mailOptions = {

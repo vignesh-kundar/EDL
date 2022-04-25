@@ -1,3 +1,24 @@
+.val-inv::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+
+.val-inv::-webkit-scrollbar {
+  width: 13px;
+  margin: 5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.val-inv::-webkit-scrollbar-thumb {
+  background-color: #cacaca50;
+  border-radius: 5px;
+}
+
+.val-inv::-webkit-scrollbar-thumb:hover {
+  background-color: #cacacac4;
+}
+
 .output-header {
   color: rgba(255, 255, 255, 0.5);
   font-family: poppins;
@@ -15,12 +36,27 @@
           justify-content: center;
 }
 
+.output-container .valid-container,
+.output-container .invalid-container {
+  margin: 40px 5%;
+}
+
+.output-container .valid-container p,
+.output-container .invalid-container p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  font-family: poppins;
+  font-weight: bold;
+  margin: 15px 20px;
+}
+
 .output-container .val-inv {
+  position: relative;
   overflow: scroll;
+  overflow-x: hidden;
   height: 60vh;
   width: 30vw;
-  margin: 40px 5%;
-  background-color: rgba(255, 255, 255, 0.297);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -28,10 +64,14 @@
 }
 
 .output-container .val-inv h3 {
+  top: 0;
+  z-index: 99;
   color: rgba(255, 255, 255, 0.5);
   font-family: poppins;
   font-weight: bold;
   font-size: 1.5rem;
+  margin: 0;
+  padding: 30px 0;
 }
 
 .output-container .val-inv div {
