@@ -1,0 +1,45 @@
+.output-header {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.output-container {
+    display: flex;
+    justify-content: center;
+    .val-inv {
+        overflow: scroll;
+        height: 60vh;
+        width: 30vw;
+        margin: 40px 5%;
+        background-color: rgba(255, 255, 255, 0.297);
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+        text-align: center;
+        h3 {
+            color: rgba(255, 255, 255, 0.5);
+            font-family: poppins;
+            font-weight: bold;
+            font-size: 1.5rem;
+        } //h3 
+        div {
+            margin: 10px 30px;
+            height: 12%;
+            width: 90%;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.297);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+                color: #000;
+                font-size: 1.2rem;
+                font-family: poppins;
+                font-weight: bold;
+            }
+        }
+    } //val-inv
+}

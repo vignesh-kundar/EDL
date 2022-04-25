@@ -1,0 +1,62 @@
+.output-header {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: poppins;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.output-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.output-container .val-inv {
+  overflow: scroll;
+  height: 60vh;
+  width: 30vw;
+  margin: 40px 5%;
+  background-color: rgba(255, 255, 255, 0.297);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.output-container .val-inv h3 {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: poppins;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.output-container .val-inv div {
+  margin: 10px 30px;
+  height: 12%;
+  width: 90%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.297);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.output-container .val-inv div p {
+  color: #000;
+  font-size: 1.2rem;
+  font-family: poppins;
+  font-weight: bold;
+}
+/*# sourceMappingURL=output.css.map */

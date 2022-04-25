@@ -5,15 +5,20 @@ const csv = require('csv-parser');
 
 //arrays
 const results = [];
-const valid = [];
-const invalid = [];
+let valid = [];
+let invalid = [];
 
-const objecta = {};
+
+
 const time = new Date();
 
 //fileupload route
 
 router.post('/', (function(req, res) {
+
+    valid = [];
+    invalid = [];
+
 
 
     var form = new formidable.IncomingForm();
@@ -28,7 +33,7 @@ router.post('/', (function(req, res) {
 
             } else {
 
-                res.write(`<b style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">File uploaded and moved!</b>`);
+                //res.write(`<b style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">File uploaded and moved!</b>`);
                 // ValidateEmail('udithbkl100@gmail.com');
 
                 csv({
@@ -52,7 +57,28 @@ router.post('/', (function(req, res) {
                                 .on('data', (data) => results.push(data.email))
                                 .on('end', () => {
                                     // console.log(results);
-                                    ress(results);
+                                    //ress(results);
+                                    valid = [];
+                                    invalid = [];
+                                    for (i = 0; i < results.length; i++) {
+                                        if (ValidateEmail(results[i])) {
+                                            valid.push(results[i])
+
+                                        } else {
+                                            invalid.push(results[i])
+                                        }
+                                    }
+
+                                    res.render('output', { V: valid, I: invalid });
+
+                                    //const info = sendmail(valid);
+
+
+                                    console.log('====>Begin');
+                                    console.log("\nvalid : \n", valid)
+                                    console.log("\n invalid : \n", invalid)
+                                    console.log('\n====>End');
+
                                 });
                         } else {
 
@@ -66,19 +92,37 @@ router.post('/', (function(req, res) {
                                 .on('end', () => {
                                     results.push(headers[0])
                                         // console.log(results)
-                                    ress(results);
+
+                                    //ress(results);
+                                    valid = [];
+                                    invalid = [];
+                                    for (i = 0; i < results.length; i++) {
+                                        if (ValidateEmail(results[i])) {
+                                            valid.push(results[i])
+
+                                        } else {
+                                            invalid.push(results[i])
+                                        }
+                                    }
+
+                                    res.render('output', { valid: valid, invalid: invalid });
+                                    // const info = sendmail(valid);
+
+
+                                    console.log('====>Begin');
+                                    console.log("\nvalid : \n", valid)
+                                    console.log("\n invalid : \n", invalid)
+                                    console.log('\n====>End');
 
                                 })
                         }
 
+
+
                     })
-                res.end();
             }
         });
     });
-
-    // res.render('output', { Valid: valid, Invalid: invalid, Info: info });
-
 
 }))
 
@@ -97,38 +141,36 @@ function ValidateEmail(inputText) {
 }
 
 
-async function ress(r) {
-    for (i = 0; i < r.length; i++) {
-        if (ValidateEmail(r[i])) {
-            valid.push(r[i])
+// async function ress(r) {
 
-        } else {
-            invalid.push(r[i])
-        }
-    }
+//     for (i = 0; i < r.length; i++) {
+//         if (ValidateEmail(r[i])) {
+//             valid.push(r[i])
 
-    console.log("valid :", valid)
-    console.log("\n invalid:", invalid)
-    sendmail(valid);
-    print(valid, invalid);
-}
+//         } else {
+//             invalid.push(r[i])
+//         }
+//     }
+//      sendmail(valid);
+
+//     console.log("Assume mail sent : ) ");
+//     console.log('====>Begin');
+//     console.log("\nvalid : \n", valid)
+//     console.log("\n invalid : \n", invalid)
+//     console.log('\n====>End');
+// }
+
+
 //   end here
 
-function print(v, i) {
-    console.log("\n==>\n");
-    console.log("================================================");
-    console.log("Valid : ", v, "\n\nInvaid : ", i);
-    console.log("================================================");
-    console.log("\n==>\n");
-}
+
 
 // NODE MAILER 
+// mail part----------------------------------------------------------------------------------------------------------------------------------
 function sendmail(valid) {
-    // mail part----------------------------------------------------------------------------------------------------------------------------------
+
     const nodemailer = require('nodemailer');
     //const MailMessage = require('nodemailer/lib/mailer/mail-message');
-
-
 
     var transporter = nodemailer.createTransport({
         pool: true,
@@ -158,18 +200,21 @@ function sendmail(valid) {
         if (err) {
             console.log(err);
         } else {
-            objecta = info;
-            console.log(valid)
-            console.log("\n------->");
+
+
+            console.log("\n\n=NODEMAILER=begin------->");
             console.log("\npending" + info.pending)
             console.log("\nrejected" + info.rejected)
             console.log("\naccepted" + info.accepted)
             console.log("Mail sent🫡 \n" + info.response);
-            console.log("------->\n");
+            console.log("=NODEMAILER=end------->\n");
+
+            return info;
 
         }
     });
 }
+
 
 
 module.exports = router;

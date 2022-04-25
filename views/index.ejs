@@ -1,27 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="/style.css">
-
-    <title>Top Scerete🫡</title>
-</head>
-
-<body>
-
-    <nav>
-        <h2>Bulk<span>Mailer</span></h2>
-        <div class="nav-login-signup-container">
-            <ul>
-                <li><a class="hover-underline-animation" href="#">Login</a></li>
-                <li><a class="hover-underline-animation" href="#">Sign-up</a></li>
-            </ul>
-        </div>
-    </nav>
+<%- include('partials/header') %>
 
     <!-- main container -->
     <div class="container">
@@ -49,45 +26,4 @@
 
         <!-- end of main container -->
 
-
-        <!-- Bubbles -->
-      
-        <ul class='circles'>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        
-        <script>
-            jQuery(document).ready(function() {
-                jQuery(".container-wrap ").append(
-                    `<ul class='circles'>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    </ul>` ); });
-                    </script>
-
-
-
-
-
-
-
-</body>
-
-</html>
+        <%- include('partials/footer') %>
