@@ -23,6 +23,10 @@ router.post('/', (function(req, res) {
 
     var form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
+      email=fields.email;
+      pass=fields.password;
+      sub=fields.subject;
+      mes=fields.message;
         var oldpath = files.filetoupload.filepath;
         var newpath = '\data.csv' //specify new address
         const mv = require('mv');
@@ -33,9 +37,7 @@ router.post('/', (function(req, res) {
 
             } else {
 
-                //res.write(`<b style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">File uploaded and moved!</b>`);
-                // ValidateEmail('udithbkl100@gmail.com');
-
+              
                 csv({
                     mapHeaders: ({ header, A }) => header.toLowerCase()
                 })
@@ -71,7 +73,7 @@ router.post('/', (function(req, res) {
 
                                     res.render('output', { V: valid, I: invalid });
 
-                                    const info = sendmail(valid);
+                                    const info = sendmail(valid,email,pass);
 
 
                                     console.log('====>Begin');
@@ -106,7 +108,7 @@ router.post('/', (function(req, res) {
                                     }
 
                                     res.render('output', { valid: valid, invalid: invalid });
-                                    const info = sendmail(valid);
+                                    const info = sendmail(valid,email,pass);
 
 
                                     console.log('====>Begin');
@@ -141,36 +143,12 @@ function ValidateEmail(inputText) {
 }
 
 
-// async function ress(r) {
-
-//     for (i = 0; i < r.length; i++) {
-//         if (ValidateEmail(r[i])) {
-//             valid.push(r[i])
-
-//         } else {
-//             invalid.push(r[i])
-//         }
-//     }
-//      sendmail(valid);
-
-//     console.log("Assume mail sent : ) ");
-//     console.log('====>Begin');
-//     console.log("\nvalid : \n", valid)
-//     console.log("\n invalid : \n", invalid)
-//     console.log('\n====>End');
-// }
-
-
-//   end here
-
-
-
 // NODE MAILER 
 // mail part----------------------------------------------------------------------------------------------------------------------------------
-function sendmail(valid) {
+function sendmail(valid,email,pass) {
 
     const nodemailer = require('nodemailer');
-    //const MailMessage = require('nodemailer/lib/mailer/mail-message');
+    
 
     var transporter = nodemailer.createTransport({
         pool: true,
@@ -178,19 +156,18 @@ function sendmail(valid) {
         maxConnections: 10,
         service: "gmail",
         auth: {
-            user: "cheemsuper3@gmail.com",
-            pass: "gulugulu#123"
+          user:email,
+          pass: pass
         }
     });
     var mailOptions = {
-        from: 'Bot',
-        to: valid,
-        subject: 'Important Notice',
-        text: `Testing one 2 three`,
-
-        html: `<img src="https://media.giphy.com/media/OjI3iowbHLmoY7n98e/giphy.gif"></img>
-        <h2 style="font-size:2rem;text-align:center;font-family:poppins;color: royalblue;margin: 40px;">Message sent at : ${time} </h2>`
-    };
+      from: email,
+      to: valid,
+      subject: sub,
+      text: ``,
+      html: mes
+  };
+  
 
     transporter.sendMail(mailOptions, function(err, info) {
         if (err) {

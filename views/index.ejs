@@ -5,21 +5,13 @@
 
         <div class="upload-container">
 
-            <div class="text-div">
-                <h2>Add your .csv File</h2>
-            </div>
-
-
             <form action="/fileupload" method="post" enctype="multipart/form-data">
-                <!-- file-input-div -->
-
-                <div class="file-input-div">
-                    <input type="file" name="filetoupload" id="" ">
-                </div>
-               <div class="btn-container ">
-                <button class="btn-4 " type="submit ">Submit</button>
-               </div>
-               
+                <div><input type="email" class="bb" name="email" placeholder="Email" id="email"></div>
+                <div><input type="password" class="bb" name="password" placeholder="Password" id="password"></div>
+                <div><input type="text" name="subject" class="bb" placeholder="Subject" id="subject"></div>
+                <div><textarea name="message" id="message" class="bb" placeholder="Message" cols="50" rows="5"></textarea></div>
+                <div><input type="file" class="file" name="filetoupload"><br></div>
+                <div><input type="submit" class="button"></div>
             </form>
 
         </div>

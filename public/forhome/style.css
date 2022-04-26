@@ -101,8 +101,8 @@ nav .nav-login-signup-container ul li a {
       -ms-flex-pack: center;
           justify-content: center;
   margin-top: 15vh;
-  height: 50vh;
-  width: 60vw;
+  height: 70vh;
+  width: 40vw;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
@@ -409,3 +409,91 @@ nav .nav-login-signup-container ul li a {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+
+
+.bb,
+textarea {
+    padding: 10px 5px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 0.5px solid #4CAF50;
+    width: 100%;
+}
+
+.button {
+    padding: 10px 5px;
+    margin: 10px 0px;
+    border: none;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    margin: 50px 0;
+    cursor: pointer;
+    width: 100%;
+    transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+    border: 2px solid #4CAF50;
+
+}
+
+.file{
+    margin-top: 25px;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px solid #4CAF50;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    transition: 1s;
+    cursor: pointer;
+  }
+  input[type=file]::file-selector-button:hover {
+    background-color: #4CAF50;
+    border: 2px solid #5ddc61;
+    color: white;
+  }
+
+  /* Desktop end */
+
+  /* mobile view  */
+  @media only screen and (max-width: 759px) {
+      .container{
+          width: 85% !important;
+          height:70% !important;
+      }
+
+      .bb,
+textarea {
+    padding: 10px 5px;
+    margin: 10px 10%;
+    border: none;
+    border-bottom: 0.5px solid #4CAF50;
+    width: 75%;
+}
+
+.file{
+    margin: 25px 10%;
+}
+
+.button {
+width: 75%;
+margin: 10% 10%;
+}
+  }
+
+  /* tab view */
+  @media only screen and (min-width: 760px) and (max-width: 1023px) {
+      .container{
+    width: 75% !important;
+    height:75% !important;
+}
+}
