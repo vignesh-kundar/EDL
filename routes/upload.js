@@ -63,18 +63,19 @@ router.post('/', (function(req, res) {
                                     valid = [];
                                     invalid = [];
                                     for (i = 0; i < results.length; i++) {
-                                        if (ValidateEmail(results[i])) {
+                                        if (ValidateEmail(results[i])&&!(valid.includes(results[i]))) {
                                             valid.push(results[i])
 
-                                        } else {
+                                        } else if((ValidateEmail(results[i])==false)&&!(invalid.includes(results[i]))) {
                                             invalid.push(results[i])
                                         }
                                     }
 
                                     res.render('output', { V: valid, I: invalid });
+                            
 
-                                    const info = sendmail(valid,email,pass);
-
+                                    // const info = sendmail(valid,email,pass);
+                                    
 
                                     console.log('====>Begin');
                                     console.log("\nvalid : \n", valid)
