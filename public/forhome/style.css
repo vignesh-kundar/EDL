@@ -466,9 +466,11 @@ input[type=file]::file-selector-button {
 
   /* mobile view  */
   @media only screen and (max-width: 759px) {
-      .container{
-          width: 85% !important;
-          height:70% !important;
+      
+
+       .upload-container {
+        height: 60vh !important;
+        width: 70vw !important;
       }
 
       .bb,
@@ -492,8 +494,11 @@ margin: 10% 10%;
 
   /* tab view */
   @media only screen and (min-width: 760px) and (max-width: 1023px) {
-      .container{
-    width: 75% !important;
-    height:75% !important;
+    
+.upload-container {
+  height: 60vh !important;
+  width: 70vw !important;
 }
+
+
 }
