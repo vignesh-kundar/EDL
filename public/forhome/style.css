@@ -107,6 +107,13 @@ nav .nav-login-signup-container ul li a {
   font-family: poppins;
 }
 
+.container .upload-container label {
+  padding: 10px;
+  font-family: poppins;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+}
+
 .container .upload-container .input-div-email-message {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -131,13 +138,6 @@ nav .nav-login-signup-container ul li a {
   margin: 60px auto;
 }
 
-.container .upload-container .input-div-email-message label {
-  padding: 10px;
-  font-family: poppins;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.25rem;
-}
-
 .container .upload-container .input-div-email-message .email-password-div,
 .container .upload-container .input-div-email-message .message-div {
   display: -webkit-box;
@@ -154,6 +154,15 @@ nav .nav-login-signup-container ul li a {
   background-color: rgba(255, 255, 255, 0.025);
   border-radius: 10px;
   margin: 10px 50px;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+.container .upload-container .input-div-email-message .email-password-div:hover,
+.container .upload-container .input-div-email-message .message-div:hover {
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .container .upload-container .input-div-email-message .email-password-div input,
@@ -170,8 +179,8 @@ nav .nav-login-signup-container ul li a {
   margin: 10px;
   border-radius: 10px;
   font-size: 1.25rem;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
   resize: none;
   border-top: 0.5px solid rgba(255, 255, 255, 0);
   border-left: 0.5px solid rgba(255, 255, 255, 0);
@@ -214,8 +223,8 @@ nav .nav-login-signup-container ul li a {
 .container .upload-container .input-div-email-message .email-password-div textarea:focus,
 .container .upload-container .input-div-email-message .message-div input:focus,
 .container .upload-container .input-div-email-message .message-div textarea:focus {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
   border-top: 0.5px solid rgba(255, 255, 255, 0.25);
   border-left: 0.5px solid rgba(255, 255, 255, 0.25);
   -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);

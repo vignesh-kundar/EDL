@@ -77,6 +77,12 @@ nav {
         text-align: center;
         @include glass-div($opacity: 0);
         font-family: poppins;
+        label {
+            padding: 10px;
+            font-family: poppins;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1.25rem;
+        }
         .input-div-email-message {
             display: flex;
             justify-content: space-between;
@@ -87,12 +93,6 @@ nav {
                 flex-direction: column;
                 margin: 60px auto;
             }
-            label {
-                padding: 10px;
-                font-family: poppins;
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 1.25rem;
-            }
             .email-password-div,
             .message-div {
                 display: flex;
@@ -102,6 +102,11 @@ nav {
                 background-color: rgba(255, 255, 255, 0.025);
                 border-radius: 10px;
                 margin: 10px 50px;
+                transition: all 0.5s ease-in;
+                &:hover {
+                    transition: all 0.5s ease-in;
+                    background-color: rgba(255, 255, 255, 0.05);
+                }
                 input,
                 textarea {
                     width: 90%;
@@ -114,14 +119,14 @@ nav {
                     margin: 10px;
                     border-radius: 10px;
                     font-size: 1.25rem;
-                    transition: all 0.5s;
+                    transition: all 1s ease-in;
                     resize: none;
                     @include glass-div($opacity: 0.01, $shadow: 0, $border-op: 0);
                     &::placeholder {
                         color: black;
                     }
                     &:focus {
-                        transition: all 0.5s;
+                        transition: all 0.5s ease-in;
                         @include glass-div($opacity: 0.25);
                     }
                 }
