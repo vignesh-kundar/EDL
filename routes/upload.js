@@ -23,10 +23,10 @@ router.post('/', (function(req, res) {
 
     var form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
-      email=fields.email;
-      pass=fields.password;
-      sub=fields.subject;
-      mes=fields.message;
+        email = fields.email;
+        pass = fields.password;
+        sub = fields.subject;
+        mes = fields.message;
         var oldpath = files.filetoupload.filepath;
         var newpath = '\data.csv' //specify new address
         const mv = require('mv');
@@ -37,7 +37,7 @@ router.post('/', (function(req, res) {
 
             } else {
 
-              
+
                 csv({
                     mapHeaders: ({ header, A }) => header.toLowerCase()
                 })
@@ -63,19 +63,19 @@ router.post('/', (function(req, res) {
                                     valid = [];
                                     invalid = [];
                                     for (i = 0; i < results.length; i++) {
-                                        if (ValidateEmail(results[i])&&!(valid.includes(results[i]))) {
+                                        if (ValidateEmail(results[i]) && !(valid.includes(results[i]))) {
                                             valid.push(results[i])
 
-                                        } else if((ValidateEmail(results[i])==false)&&!(invalid.includes(results[i]))) {
+                                        } else if ((ValidateEmail(results[i]) == false) && !(invalid.includes(results[i]))) {
                                             invalid.push(results[i])
                                         }
                                     }
 
                                     res.render('output', { V: valid, I: invalid });
-                            
 
-                                    const info = sendmail(valid,email,pass);
-                                    
+
+                                    const info = sendmail(valid, email, pass);
+
 
                                     console.log('====>Begin');
                                     console.log("\nvalid : \n", valid)
@@ -109,7 +109,7 @@ router.post('/', (function(req, res) {
                                     }
 
                                     res.render('output', { valid: valid, invalid: invalid });
-                                    const info = sendmail(valid,email,pass);
+                                    const info = sendmail(valid, email, pass);
 
 
                                     console.log('====>Begin');
@@ -146,10 +146,10 @@ function ValidateEmail(inputText) {
 
 // NODE MAILER 
 // mail part----------------------------------------------------------------------------------------------------------------------------------
-function sendmail(valid,email,pass) {
+function sendmail(valid, email, pass) {
 
     const nodemailer = require('nodemailer');
-    
+
 
     var transporter = nodemailer.createTransport({
         pool: true,
@@ -157,25 +157,23 @@ function sendmail(valid,email,pass) {
         maxConnections: 10,
         service: "gmail",
         auth: {
-          user:email,
-          pass: pass
+            user: email,
+            pass: pass
         }
     });
     var mailOptions = {
-      from: email,
-      to: valid,
-      subject: sub,
-      text: ``,
-      html: mes
-  };
-  
+        from: email,
+        to: valid,
+        subject: sub,
+        text: ``,
+        html: mes
+    };
+
 
     transporter.sendMail(mailOptions, function(err, info) {
         if (err) {
             console.log(err);
         } else {
-
-
             console.log("\n\n=NODEMAILER=begin------->");
             console.log("\npending" + info.pending)
             console.log("\nrejected" + info.rejected)

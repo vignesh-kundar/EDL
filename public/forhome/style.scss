@@ -1,26 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+//mixins
+@mixin glass-div($opacity,
+$shadow: 0.25,
+$border-op: 0.25) {
+    border-top: .5px solid rgba(255, 255, 255, $border-op);
+    border-left: .5px solid rgba(255, 255, 255, $border-op);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, $shadow);
+    background: rgba(255, 255, 255, $opacity);
+    backdrop-filter: blur(5px);
+}
+
 body {
-    //---------------1
-    // background: #20002c;
-    // /* fallback for old browsers */
-    // background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);
-    // /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(to right, #cbb4d4, #20002c);
-    // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    //--------------> 2
-    // background: #EFEFBB;
-    // /* fallback for old browsers */
-    // background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
-    // /* Chrome 10-25, Safari 5.1-6 */
-    // background: linear-gradient(to right, #D4D3DD, #EFEFBB);
-    // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    //-------------->3
     background: #4776E6;
-    /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
-    /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #8E54E9, #4776E6);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     box-sizing: border-box;
     margin: 0;
     position: inherit;
@@ -34,7 +27,6 @@ nav {
     align-items: center;
     height: 100px;
     width: 100%;
-    // background-color: rgba(255, 255, 255, 0.10);
     h2 {
         margin: 0 40px;
         color: rgb(106, 51, 94);
@@ -71,94 +63,111 @@ nav {
 }
 
 .container {
-    position: inherit;
-    z-index: 99;
     display: flex;
     justify-content: center;
     align-items: center;
     .upload-container {
-        position: relative;
-        z-index: 99;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        margin-top: 15vh;
-        height: 50vh;
+        margin-top: 10vh;
+        height: fit-content;
         width: 60vw;
-        background-color: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-        backdrop-filter: blur(5px);
-        border-top: .5px solid rgba(255, 255, 255, 0.5);
-        border-left: .5px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
-        .text-div {
-            margin: 20px 0;
-            position: absolute;
-            filter: blur(3px);
-            font-family: poppins;
-            letter-spacing: -5px;
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 1em;
-            top: -25px;
-            text-shadow: 2px 2px 5px #0a0a0a6e;
-            transition: all 5s;
-        }
-        &:hover {
-            .text-div {
-                transition: all 0.5s;
-                letter-spacing: 5px;
-                filter: blur(0);
-                font-size: 2em;
+        text-align: center;
+        @include glass-div($opacity: 0);
+        font-family: poppins;
+        .input-div-email-message {
+            display: flex;
+            justify-content: space-between;
+            .container-1,
+            .container-2 {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                margin: 60px auto;
             }
-        }
-        .file-input-div {
-            margin-top: 20%;
-            input[type="file"] {
-                padding: 5px;
-                background-color: rgba(255, 255, 255, 0.1);
-                border: none;
-                border-radius: 5px;
+            label {
+                padding: 10px;
                 font-family: poppins;
-                font-weight: bold;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 1.25rem;
             }
-            input[type="file"]::file-selector-button {
-                padding: 3%;
-                background-color: rgba(10, 10, 10, 0.25);
-                border: none;
-                color: #fff;
-                border-radius: 5px;
-                cursor: pointer;
-                border-top: .5px solid rgba(255, 255, 255, 0.5);
-                border-left: .5px solid rgba(255, 255, 255, 0.5);
-                font-family: poppins;
-                font-weight: bold;
+            .email-password-div,
+            .message-div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.025);
+                border-radius: 10px;
+                margin: 10px 50px;
+                input,
+                textarea {
+                    width: 90%;
+                    outline: none;
+                    padding: 10px;
+                    color: white;
+                    font-family: poppins;
+                    font-weight: 500;
+                    border-style: none;
+                    margin: 10px;
+                    border-radius: 10px;
+                    font-size: 1.25rem;
+                    transition: all 0.5s;
+                    resize: none;
+                    @include glass-div($opacity: 0.01, $shadow: 0, $border-op: 0);
+                    &::placeholder {
+                        color: black;
+                    }
+                    &:focus {
+                        transition: all 0.5s;
+                        @include glass-div($opacity: 0.25);
+                    }
+                }
             }
-            input[type="file"] {
-                cursor: pointer;
-            }
-        } //input-file-div-ends here
-        .btn-container {
-            width: 100%;
-            text-align: center;
-            margin: 15px auto;
+        } //input-div-email-message end
+        .input-file-div {
+            margin: 10px auto;
             button {
-                padding: 10px 20px;
-                border-radius: 5px;
-                border: none;
                 font-family: poppins;
-                font-weight: 700;
+                font-weight: bold;
                 cursor: pointer;
-                background: lightgreen;
-            }
-            button:hover {
-                transition: all 0.5s;
-                padding: 12px 27px;
-                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
+                padding: 10px 20px;
+                background-color: lightgreen;
+                border: none;
+                margin: 10px;
+                border-radius: 10px;
             }
         }
-    } //upload-container
+    }
 }
 
 @import 'hoverUnderline';
-@import '_background';
+@import 'background';
+//file input styles
+input[type="file"] {
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 3%;
+    background-color: rgba(10, 10, 10, 0.25);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border-top: .5px solid rgba(255, 255, 255, 0.5);
+    border-left: .5px solid rgba(255, 255, 255, 0.5);
+    font-family: poppins;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    cursor: pointer;
+}

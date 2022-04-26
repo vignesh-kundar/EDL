@@ -5,17 +5,42 @@
 
         <div class="upload-container">
 
-            <form action="/fileupload" method="post" enctype="multipart/form-data">
-                <div><input type="email" class="bb" name="email" placeholder="Email" id="email"></div>
-                <div><input type="password" class="bb" name="password" placeholder="Password" id="password"></div>
-                <div><input type="text" name="subject" class="bb" placeholder="Subject" id="subject"></div>
-                <div><textarea name="message" id="message" class="bb" placeholder="Message" cols="50" rows="5"></textarea></div>
-                <div><input type="file" class="file" name="filetoupload"><br></div>
-                <div><input type="submit" class="button"></div>
+            <form action="/fileupload" method="post" enctype="multipart/form-data" autocomplete="off">
+
+                <div class="input-div-email-message">
+
+                    <div class="container-1">
+                        <label for="email-pass-div">Enter Transport Mail Data .</label>
+                        <div class="email-password-div" id="email-pass-div">
+                            <input type="email" class="form__label" id="email" name="email" placeholder="Email" id="email" required autocomplete="off">
+                            <input type="password" name="password" placeholder="Password" id="password" required autocomplete="off">
+                        </div>
+                    </div>
+
+                    <div class="container-2">
+                        <label for="message-div">Enter Your Message.</label>
+                        <div class="message-div" id="message-div">
+                            <input type="text" name="subject" placeholder="Subject" id="subject" value="This is an example!" required>
+                            <textarea name="message" id="message" placeholder="Message" cols="50" rows="5" required>Hello there, This mail is been sent using BulkMailer!
+                            </textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="add-file-container">
+                    <label for="email-pass-div">Enter Transport Mail Data .</label>
+
+                    <div class="input-file-div" id="">
+                        <input type="file" class="file" name="filetoupload"><br>
+                        <button type="submit">Submit</button>
+                    </div>
+                </div>
+
+
             </form>
 
         </div>
-
         <!-- end of main container -->
 
         <%- include('partials/footer') %>

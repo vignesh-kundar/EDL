@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 body {
   background: #4776E6;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-gradient(linear, left top, right top, from(#8E54E9), to(#4776E6));
   background: linear-gradient(to right, #8E54E9, #4776E6);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -71,8 +68,6 @@ nav .nav-login-signup-container ul li a {
 }
 
 .container {
-  position: inherit;
-  z-index: 99;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,8 +80,66 @@ nav .nav-login-signup-container ul li a {
 }
 
 .container .upload-container {
-  position: relative;
-  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 60vw;
+  border-radius: 10px;
+  text-align: center;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.25);
+  border-left: 0.5px solid rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  font-family: poppins;
+}
+
+.container .upload-container .input-div-email-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .upload-container .input-div-email-message .container-1,
+.container .upload-container .input-div-email-message .container-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 60px auto;
+}
+
+.container .upload-container .input-div-email-message label {
+  padding: 10px;
+  font-family: poppins;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+}
+
+.container .upload-container .input-div-email-message .email-password-div,
+.container .upload-container .input-div-email-message .message-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,98 +150,94 @@ nav .nav-login-signup-container ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 15vh;
-  height: 70vh;
-  width: 40vw;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.025);
   border-radius: 10px;
+  margin: 10px 50px;
+}
+
+.container .upload-container .input-div-email-message .email-password-div input,
+.container .upload-container .input-div-email-message .email-password-div textarea,
+.container .upload-container .input-div-email-message .message-div input,
+.container .upload-container .input-div-email-message .message-div textarea {
+  width: 90%;
+  outline: none;
+  padding: 10px;
+  color: white;
+  font-family: poppins;
+  font-weight: 500;
+  border-style: none;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  resize: none;
+  border-top: 0.5px solid rgba(255, 255, 255, 0);
+  border-left: 0.5px solid rgba(255, 255, 255, 0);
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0.01);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  border-top: 0.5px solid rgba(255, 255, 255, 0.5);
-  border-left: 0.5px solid rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
-          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
 }
 
-.container .upload-container .text-div {
-  margin: 20px 0;
-  position: absolute;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-  font-family: poppins;
-  letter-spacing: -5px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1em;
-  top: -25px;
-  text-shadow: 2px 2px 5px #0a0a0a6e;
-  -webkit-transition: all 5s;
-  transition: all 5s;
+.container .upload-container .input-div-email-message .email-password-div input::-webkit-input-placeholder,
+.container .upload-container .input-div-email-message .email-password-div textarea::-webkit-input-placeholder,
+.container .upload-container .input-div-email-message .message-div input::-webkit-input-placeholder,
+.container .upload-container .input-div-email-message .message-div textarea::-webkit-input-placeholder {
+  color: black;
 }
 
-.container .upload-container:hover .text-div {
+.container .upload-container .input-div-email-message .email-password-div input:-ms-input-placeholder,
+.container .upload-container .input-div-email-message .email-password-div textarea:-ms-input-placeholder,
+.container .upload-container .input-div-email-message .message-div input:-ms-input-placeholder,
+.container .upload-container .input-div-email-message .message-div textarea:-ms-input-placeholder {
+  color: black;
+}
+
+.container .upload-container .input-div-email-message .email-password-div input::-ms-input-placeholder,
+.container .upload-container .input-div-email-message .email-password-div textarea::-ms-input-placeholder,
+.container .upload-container .input-div-email-message .message-div input::-ms-input-placeholder,
+.container .upload-container .input-div-email-message .message-div textarea::-ms-input-placeholder {
+  color: black;
+}
+
+.container .upload-container .input-div-email-message .email-password-div input::placeholder,
+.container .upload-container .input-div-email-message .email-password-div textarea::placeholder,
+.container .upload-container .input-div-email-message .message-div input::placeholder,
+.container .upload-container .input-div-email-message .message-div textarea::placeholder {
+  color: black;
+}
+
+.container .upload-container .input-div-email-message .email-password-div input:focus,
+.container .upload-container .input-div-email-message .email-password-div textarea:focus,
+.container .upload-container .input-div-email-message .message-div input:focus,
+.container .upload-container .input-div-email-message .message-div textarea:focus {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  letter-spacing: 5px;
-  -webkit-filter: blur(0);
-          filter: blur(0);
-  font-size: 2em;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.25);
+  border-left: 0.5px solid rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 
-.container .upload-container .file-input-div {
-  margin-top: 20%;
+.container .upload-container .input-file-div {
+  margin: 10px auto;
 }
 
-.container .upload-container .file-input-div input[type="file"] {
-  padding: 5px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 5px;
+.container .upload-container .input-file-div button {
   font-family: poppins;
   font-weight: bold;
-}
-
-.container .upload-container .file-input-div input[type="file"]::file-selector-button {
-  padding: 3%;
-  background-color: rgba(10, 10, 10, 0.25);
-  border: none;
-  color: #fff;
-  border-radius: 5px;
   cursor: pointer;
-  border-top: 0.5px solid rgba(255, 255, 255, 0.5);
-  border-left: 0.5px solid rgba(255, 255, 255, 0.5);
-  font-family: poppins;
-  font-weight: bold;
-}
-
-.container .upload-container .file-input-div input[type="file"] {
-  cursor: pointer;
-}
-
-.container .upload-container .btn-container {
-  width: 100%;
-  text-align: center;
-  margin: 15px auto;
-}
-
-.container .upload-container .btn-container button {
   padding: 10px 20px;
-  border-radius: 5px;
+  background-color: lightgreen;
   border: none;
-  font-family: poppins;
-  font-weight: 700;
-  cursor: pointer;
-  background: lightgreen;
-}
-
-.container .upload-container .btn-container button:hover {
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  padding: 12px 27px;
-  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
-          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.379);
+  margin: 10px;
+  border-radius: 10px;
 }
 
 .hover-underline-animation {
@@ -408,97 +457,30 @@ nav .nav-login-signup-container ul li a {
     opacity: 0;
   }
 }
+
+input[type="file"] {
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  font-family: poppins;
+  font-weight: bold;
+}
+
+input[type="file"]::file-selector-button {
+  padding: 3%;
+  background-color: rgba(10, 10, 10, 0.25);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.5);
+  border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+  font-family: poppins;
+  font-weight: bold;
+}
+
+input[type="file"] {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
-
-
-
-.bb,
-textarea {
-    padding: 10px 5px;
-    margin: 10px 0px;
-    border: none;
-    border-bottom: 0.5px solid #4CAF50;
-    width: 100%;
-}
-
-.button {
-    padding: 10px 5px;
-    margin: 10px 0px;
-    border: none;
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-    margin: 50px 0;
-    cursor: pointer;
-    width: 100%;
-    transition-duration: 0.4s;
-}
-
-.button:hover{
-    background-color: #4CAF50;
-    color: white;
-    transform: scale(1.05);
-    border: 2px solid #4CAF50;
-
-}
-
-.file{
-    margin-top: 25px;
-}
-
-input[type=file]::file-selector-button {
-    border: 2px solid #4CAF50;
-    padding: .2em .4em;
-    border-radius: .2em;
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
-    transition: 1s;
-    cursor: pointer;
-  }
-  input[type=file]::file-selector-button:hover {
-    background-color: #4CAF50;
-    border: 2px solid #5ddc61;
-    color: white;
-  }
-
-  /* Desktop end */
-
-  /* mobile view  */
-  @media only screen and (max-width: 759px) {
-      
-
-       .upload-container {
-        height: 60vh !important;
-        width: 70vw !important;
-      }
-
-      .bb,
-textarea {
-    padding: 10px 5px;
-    margin: 10px 10%;
-    border: none;
-    border-bottom: 0.5px solid #4CAF50;
-    width: 75%;
-}
-
-.file{
-    margin: 25px 10%;
-}
-
-.button {
-width: 75%;
-margin: 10% 10%;
-}
-  }
-
-  /* tab view */
-  @media only screen and (min-width: 760px) and (max-width: 1023px) {
-    
-.upload-container {
-  height: 60vh !important;
-  width: 70vw !important;
-}
-
-
-}
