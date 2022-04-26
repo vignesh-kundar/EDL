@@ -74,7 +74,7 @@ router.post('/', (function(req, res) {
                                     res.render('output', { V: valid, I: invalid });
                             
 
-                                    // const info = sendmail(valid,email,pass);
+                                    const info = sendmail(valid,email,pass);
                                     
 
                                     console.log('====>Begin');
