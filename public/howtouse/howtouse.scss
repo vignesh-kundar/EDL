@@ -1,0 +1,82 @@
+@mixin glass-div($opacity, $shadow: 0.25, $border-op: 0.25) {
+    border-top: .5px solid rgba(255, 255, 255, $border-op);
+    border-left: .5px solid rgba(255, 255, 255, $border-op);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, $shadow);
+    background: rgba(255, 255, 255, $opacity);
+    backdrop-filter: blur(5px);
+    &:hover {
+        transition: all 0.5s ease-in;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 20px 40px;
+    letter-spacing: 3px;
+}
+
+hr {
+    width: 80%;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    margin: 20px 40px;
+}
+
+//end of defaults : )
+.container-htu {
+    display: flex;
+    flex-direction: column;
+    font-family: poppins;
+    // background-color: pink;
+    height: 72vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    .C {
+        @include glass-div($opacity: 0.1);
+        margin: 10px 40px;
+        border-radius: 10px;
+        padding: 20px;
+        label {
+            color: rgba(255, 255, 255, 0.75);
+            font-family: poppins;
+            font-weight: 500;
+            font-size: 1.7rem;
+            margin: 20px 40px;
+        }
+        p,
+        li {
+            margin: 20px 40px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1rem;
+        }
+        span {
+            color: rgb(210, 252, 103);
+        }
+    }
+}
+
+//scrollbar
+.container-htu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+}
+
+.container-htu::-webkit-scrollbar {
+    width: 13px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.container-htu::-webkit-scrollbar-thumb {
+    background-color: #cacaca50;
+    border-radius: 5px;
+}
+
+.container-htu::-webkit-scrollbar-thumb:hover {
+    background-color: #cacacac4;
+}

@@ -23,11 +23,17 @@
   color: rgba(255, 255, 255, 0.5);
   font-family: poppins;
   font-weight: bold;
-  font-size: 1.5rem;
   text-align: center;
+  margin: 0;
+}
+
+.output-header h2 {
+  font-size: 1.5rem !important;
+  letter-spacing: 5px;
 }
 
 .output-container {
+  scroll-behavior: smooth;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,23 +44,23 @@
 
 .output-container .valid-container,
 .output-container .invalid-container {
-  margin: 40px 5%;
+  margin: 10px 5%;
 }
 
 .output-container .valid-container p,
 .output-container .invalid-container p {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: poppins;
   font-weight: bold;
-  margin: 15px 20px;
+  margin: 10px 20px;
 }
 
 .output-container .val-inv {
   position: relative;
   overflow: scroll;
   overflow-x: hidden;
-  height: 60vh;
+  height: 57vh;
   width: 30vw;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -69,7 +75,7 @@
   color: rgba(255, 255, 255, 0.5);
   font-family: poppins;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
   padding: 30px 0;
 }
@@ -95,8 +101,38 @@
 
 .output-container .val-inv div p {
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: poppins;
   font-weight: bold;
+}
+
+.info-container {
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.01);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+.info-container p {
+  padding: 20px 45px;
+  font-family: poppins;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+.info-container:hover {
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 /*# sourceMappingURL=output.css.map */

@@ -1,31 +1,37 @@
 @import 'outputscroll';
+//
 .output-header {
     color: rgba(255, 255, 255, 0.5);
     font-family: poppins;
     font-weight: bold;
-    font-size: 1.5rem;
     text-align: center;
+    margin: 0;
+    h2 {
+        font-size: 1.5rem !important;
+        letter-spacing: 5px;
+    }
 }
 
 .output-container {
+    scroll-behavior: smooth;
     display: flex;
     justify-content: center;
     .valid-container,
     .invalid-container {
-        margin: 40px 5%;
+        margin: 10px 5%;
         p {
             color: rgba(255, 255, 255, 0.5);
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-family: poppins;
             font-weight: bold;
-            margin: 15px 20px;
+            margin: 10px 20px;
         }
     }
     .val-inv {
         position: relative;
         overflow: scroll;
         overflow-x: hidden;
-        height: 60vh;
+        height: 57vh;
         width: 30vw;
         background-color: rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -39,7 +45,7 @@
             color: rgba(255, 255, 255, 0.5);
             font-family: poppins;
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1rem;
             margin: 0;
             padding: 30px 0;
             //background-color: rgba(255, 255, 255, 0.9);
@@ -56,10 +62,31 @@
             justify-content: center;
             p {
                 color: #000;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-family: poppins;
                 font-weight: bold;
             }
         }
     } //val-inv
+} //output-container
+.info-container {
+    margin: 0 auto;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.01);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 1.5s;
+    p {
+        padding: 20px 45px;
+        font-family: poppins;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+        color: rgba(255, 255, 255, 1);
+        text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.1);
+    }
+    &:hover {
+        transition: all 1.5s;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
 }

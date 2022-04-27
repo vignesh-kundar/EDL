@@ -31,7 +31,7 @@ nav {
         margin: 0 40px;
         color: rgb(106, 51, 94);
         font-family: 'Cookie', cursive;
-        font-size: 3.5rem;
+        font-size: 3rem;
         cursor: pointer;
         span {
             color: rgb(120, 153, 223);
@@ -50,7 +50,7 @@ nav {
             display: flex;
             li {
                 list-style: none;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 margin: 0 10px;
                 a {
                     text-decoration: none;
@@ -81,7 +81,7 @@ nav {
             padding: 10px;
             font-family: poppins;
             color: rgba(255, 255, 255, 0.5);
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
         .input-div-email-message {
             display: flex;
@@ -91,14 +91,14 @@ nav {
                 display: flex;
                 justify-content: flex-start;
                 flex-direction: column;
-                margin: 60px auto;
+                margin: 30px auto;
             }
             .email-password-div,
             .message-div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 15px;
                 background-color: rgba(255, 255, 255, 0.025);
                 border-radius: 10px;
                 margin: 10px 50px;
@@ -118,7 +118,7 @@ nav {
                     border-style: none;
                     margin: 10px;
                     border-radius: 10px;
-                    font-size: 1.25rem;
+                    font-size: 1rem;
                     transition: all 1s ease-in;
                     resize: none;
                     @include glass-div($opacity: 0.01, $shadow: 0, $border-op: 0);

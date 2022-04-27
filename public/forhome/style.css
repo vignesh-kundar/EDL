@@ -29,7 +29,7 @@ nav h2 {
   margin: 0 40px;
   color: #6a335e;
   font-family: 'Cookie', cursive;
-  font-size: 3.5rem;
+  font-size: 3rem;
   cursor: pointer;
 }
 
@@ -57,7 +57,7 @@ nav .nav-login-signup-container ul {
 
 nav .nav-login-signup-container ul li {
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0 10px;
 }
 
@@ -111,7 +111,7 @@ nav .nav-login-signup-container ul li a {
   padding: 10px;
   font-family: poppins;
   color: rgba(255, 255, 255, 0.5);
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .container .upload-container .input-div-email-message {
@@ -135,7 +135,7 @@ nav .nav-login-signup-container ul li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 60px auto;
+  margin: 30px auto;
 }
 
 .container .upload-container .input-div-email-message .email-password-div,
@@ -150,7 +150,7 @@ nav .nav-login-signup-container ul li a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  padding: 15px;
   background-color: rgba(255, 255, 255, 0.025);
   border-radius: 10px;
   margin: 10px 50px;
@@ -178,7 +178,7 @@ nav .nav-login-signup-container ul li a {
   border-style: none;
   margin: 10px;
   border-radius: 10px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   -webkit-transition: all 1s ease-in;
   transition: all 1s ease-in;
   resize: none;
