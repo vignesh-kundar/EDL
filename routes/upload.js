@@ -2,7 +2,8 @@ const router = require('express').Router();
 var formidable = require('formidable');
 var fs = require('fs');
 const csv = require('csv-parser');
-
+const nodemailer = require('nodemailer');
+const { response } = require('express');
 //arrays
 const results = [];
 let valid = [];
@@ -10,7 +11,7 @@ let invalid = [];
 
 
 
-const time = new Date();
+//const time = new Date();
 
 //fileupload route
 
@@ -69,13 +70,34 @@ router.post('/', (function(req, res) {
                                         } else if ((ValidateEmail(results[i]) == false) && !(invalid.includes(results[i]))) {
                                             invalid.push(results[i])
                                         }
-                                    }
+                                    };
+                                    //----------------------------------------------------------------------------------------------------------------- mail part
+                                    var transporter = nodemailer.createTransport({
+                                        pool: true,
+                                        maxMessages: 10000,
+                                        maxConnections: 10,
+                                        service: "gmail",
+                                        auth: {
+                                            user: email,
+                                            pass: pass
+                                        }
+                                    });
+                                    var mailOptions = {
+                                        from: email,
+                                        to: valid,
+                                        subject: sub,
+                                        text: ``,
+                                        html: mes
+                                    };
 
-                                    res.render('output', { V: valid, I: invalid });
+                                    transporter.sendMail(mailOptions).then(function(response) {
 
-
-                                    const info = sendmail(valid, email, pass);
-
+                                        console.info(response);
+                                        res.render('output', { V: valid, I: invalid, E: 0 });
+                                    }).catch(function(error) {
+                                        console.info(error);
+                                        res.render('output', { V: valid, I: invalid, E: 1 });
+                                    })
 
                                     console.log('====>Begin');
                                     console.log("\nvalid : \n", valid)
@@ -108,8 +130,35 @@ router.post('/', (function(req, res) {
                                         }
                                     }
 
-                                    res.render('output', { valid: valid, invalid: invalid });
-                                    const info = sendmail(valid, email, pass);
+                                    //-------------------------------------------------------------------------------------------------------------------------------mailpart
+                                    var transporter = nodemailer.createTransport({
+                                        pool: true,
+                                        maxMessages: 10000,
+                                        maxConnections: 10,
+                                        service: "gmail",
+                                        auth: {
+                                            user: email,
+                                            pass: pass
+                                        }
+                                    });
+                                    var mailOptions = {
+                                        from: email,
+                                        to: valid,
+                                        subject: sub,
+                                        text: ``,
+                                        html: mes
+                                    };
+
+                                    transporter.sendMail(mailOptions).then(function(response) {
+
+                                        console.info(response);
+                                        res.render('output', { V: valid, I: invalid, E: 0 });
+                                    }).catch(function(error) {
+                                        console.info(error);
+                                        res.render('output', { V: valid, I: invalid, E: 1 });
+                                    })
+
+                                    //----------------------------------------------------------------------------------------------------------------------------------
 
 
                                     console.log('====>Begin');
@@ -144,48 +193,7 @@ function ValidateEmail(inputText) {
 }
 
 
-// NODE MAILER 
-// mail part----------------------------------------------------------------------------------------------------------------------------------
-function sendmail(valid, email, pass) {
 
-    const nodemailer = require('nodemailer');
-
-
-    var transporter = nodemailer.createTransport({
-        pool: true,
-        maxMessages: 10000,
-        maxConnections: 10,
-        service: "gmail",
-        auth: {
-            user: email,
-            pass: pass
-        }
-    });
-    var mailOptions = {
-        from: email,
-        to: valid,
-        subject: sub,
-        text: ``,
-        html: mes
-    };
-
-
-    transporter.sendMail(mailOptions, function(err, info) {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log("\n\n=NODEMAILER=begin------->");
-            console.log("\npending" + info.pending)
-            console.log("\nrejected" + info.rejected)
-            console.log("\naccepted" + info.accepted)
-            console.log("Mail sent🫡 \n" + info.response);
-            console.log("=NODEMAILER=end------->\n");
-
-            return info;
-
-        }
-    });
-}
 
 
 

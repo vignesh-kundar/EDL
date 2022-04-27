@@ -1,4 +1,5 @@
 <%- include('partials/header') %>
+
     <div class="output-header">
         <h2>Validatation of Mails</h2>
     </div>
@@ -44,8 +45,16 @@
             </p>
 
         </div>
+        <% var test = 101; %>
 
 
 
-
-        <%- include('partials/footer') %>
+            <%- include('partials/footer') %>
+                <script>
+                    var e = <%= E  %>;
+                    if (e) {
+                        alert("Invalid Email/Password Mail not sent Please retry with proper mail!!");
+                    } else {
+                        alert("Mail sent!!");
+                    }
+                </script>
