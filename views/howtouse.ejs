@@ -6,27 +6,71 @@
     <div class="container-htu">
 
         <div class="container1 C">
-            <label for="container1-data">Heading</label>
+            <label for="container1-data">Brief Introduction.</label>
             <div class="" id="container1-data">
-                <p> <span>use span to change color ! and everything already styled just add content</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa quidem voluptates esse qui eligendi ipsum quaerat quasi! Possimus pariatur nam eaque
-                    aliquam magnam. Eum voluptatibus necessitatibus facilis saepe dolore voluptate. Ratione quae voluptas perferendis distinctio est earum assumenda ipsa nesciunt odit, natus voluptates repellat excepturi nobis! Tempore omnis perferendis
-                    neque nobis officia id laboriosam obcaecati. Quaerat temporibus culpa impedit asperiores! At modi aspernatur neque ullam repudiandae sunt, repellat numquam non eveniet eos provident necessitatibus tempore dolorum optio consequuntur
-                    temporibus quis! Commodi quos sequi laborum ad corrupti maiores, maxime assumenda officiis? Asperiores rem eveniet non ad quidem <span>exercitationem</span> maxime nobis necessitatibus, facilis laborum odio, cupiditate maiores temporibus.
-                    Non debitis eligendi obcaecati molestiae, cupiditate officia repudiandae qui quisquam, quidem voluptatum quis esse? Minima libero corporis iusto amet incidunt eaque, dicta excepturi ut cum eveniet dolorem aspernatur facere earum ad
-                    beatae omnis aperiam mollitia consectetur quisquam eum magnam perspiciatis ullam molestias corrupti? Vero.</p>
+                <p> &emsp; <span> BulkMailer</span> is a web app That helps the user to send bulk mail using their mail address (Gmail). Which uses the various email address provided by the inputted CSV file from the user to Mail the provided content.</p>
+            </div>
+        </div>
+        <!-- Links -->
+        <div class="container1 C">
+            <label for="container1-data">Steps to follow.</label>
+            <div class="" id="container1-data">
+                <ol>
+                    <li> <a href="#">Mail address.</a> </li>
+                    <li> <a href="#">Message Fields.</a> </li>
+                    <li> <a href="#">CSV file.</a></li>
+                </ol>
+            </div>
+        </div>
+        <!-- mail details -->
+        <div class="container1 C" id="mail-d">
+            <label for="container1-data">Mail address</label>
+            <div class="" id="container1-data">
+                <ol>
+                    <li>
+                        Please note that the mail address you are using should not have 2 step verification enabled <a href="https://www.alphr.com/use-gmail-without-phone-number/" target="_blank">Learn how</a>.
+                    </li>
+                    <li>
+                        Since we are using <span>Gmail</span> as a transport mail address, we have to enable <a href="https://support.google.com/accounts/answer/6010255?hl=en" target="_blank">Less secure</a> So that the <span>BulkMailer</span> can use
+                        the Provided Mail address . <br> <span>NOTE : Your mail address cannot enable "Less Secure" feature if it has <b>Two factor authentication</b></span> enabled. <br>
+                        <span>Reason : </span> &nbsp; Gmail expects the user to be an actual user not a robot so it runs a lot of heuristics for every login attempt and blocks anything that looks suspicious to defend the user from account hijacking attempts.
+                    </li>
+
+                </ol>
+            </div>
+        </div>
+        <!-- message details -->
+        <div class="container1 C" id="message-d">
+            <label for="container1-data">Message and Subject</label>
+            <div class="" id="container1-data">
+                <ol>
+                    <li>
+                        <span>Subject &nbsp; : </span> &nbsp; Subject can be any of your wish you can edit the default values to new value.
+                    </li>
+                    <li>
+                        <span>Message &nbsp;: </span> &nbsp; Message can either be an <span>Html</span> or a simple <span>Message String</span> of your choice .
+                    </li>
+
+                </ol>
             </div>
         </div>
 
-        <div class="container1 C">
-            <label for="container1-data">Heading</label>
+        <!-- csv details -->
+        <div class="container1 C" id="csv-d">
+            <label for="container1-data">CSV</label>
             <div class="" id="container1-data">
-                <ul>
-                    <li>testing </li>
-                    <li>testing </li>
-                    <li>testing <span>cbr 250</span> </li>
-                    <li>testing </li>
-                    <li>testing </li>
-                </ul>
+                <ol>
+                    <li>
+                        Before inputting CSV file, Enter the <span>Email address</span> and <span>Password</span>, and your preffered messgae and subject.
+                    </li>
+                    <li>
+                        Input the csv file and hit submit. It might take some amount of time depending on your network speed. You will be notified with the alert message weather the message is deliverd or not.
+                    </li>
+                    <li>
+                        You mail address in the csv files will be <span>Validated</span> and <span>Displayed</span>. <br> Mails will be only sent to the <span>Valid mail address</span>.
+                    </li>
+
+                </ol>
             </div>
         </div>
 

@@ -1,0 +1,45 @@
+@mixin glass-div($opacity:0.05, $shadow: 0.25, $border-op: 0.25) {
+    border-top: .5px solid rgba(255, 255, 255, $border-op);
+    border-left: .5px solid rgba(255, 255, 255, $border-op);
+    background: rgba(255, 255, 255, $opacity);
+    backdrop-filter: blur(5px);
+    transition: all 0.5s ease-in;
+    &:hover {
+        transition: all 0.5s ease-in;
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, $shadow);
+    }
+}
+
+.au-container {
+    margin: 10px auto;
+    padding: 80px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 20rem);
+    .au-data {
+        // margin: 30px 40px;
+        height: 400px;
+        width: 300px;
+        @include glass-div();
+        border-radius: 10px;
+        .au-img {
+            height: 60%;
+            width: auto;
+            margin: 20px;
+            background-color: coral;
+            border-radius: 10px;
+        }
+        .au-names {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p,
+            a {
+                font-family: poppins;
+                color: rgba(255, 255, 255, 1)
+            }
+        }
+    }
+}

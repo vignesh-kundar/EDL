@@ -37,9 +37,10 @@ hr {
     overflow-x: hidden;
     .C {
         @include glass-div($opacity: 0.1);
-        margin: 10px 40px;
+        margin: 20px 80px;
         border-radius: 10px;
         padding: 20px;
+        width: 80vw;
         label {
             color: rgba(255, 255, 255, 0.75);
             font-family: poppins;
@@ -48,10 +49,18 @@ hr {
             margin: 20px 40px;
         }
         p,
+        pre,
         li {
             margin: 20px 40px;
             color: rgba(255, 255, 255, 0.4);
             font-size: 1rem;
+            a {
+                text-decoration: none;
+                color: rgba(255, 255, 255, 1);
+                &:hover {
+                    color: royalblue;
+                }
+            }
         }
         span {
             color: rgb(210, 252, 103);

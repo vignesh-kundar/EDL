@@ -9,6 +9,7 @@ body {
   position: inherit;
   z-index: 0;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 nav {

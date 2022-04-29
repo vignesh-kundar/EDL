@@ -36,9 +36,10 @@ hr {
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  margin: 10px 40px;
+  margin: 20px 80px;
   border-radius: 10px;
   padding: 20px;
+  width: 80vw;
 }
 
 .container-htu .C:hover {
@@ -56,10 +57,24 @@ hr {
 }
 
 .container-htu .C p,
+.container-htu .C pre,
 .container-htu .C li {
   margin: 20px 40px;
   color: rgba(255, 255, 255, 0.4);
   font-size: 1rem;
+}
+
+.container-htu .C p a,
+.container-htu .C pre a,
+.container-htu .C li a {
+  text-decoration: none;
+  color: white;
+}
+
+.container-htu .C p a:hover,
+.container-htu .C pre a:hover,
+.container-htu .C li a:hover {
+  color: royalblue;
 }
 
 .container-htu .C span {
