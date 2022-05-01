@@ -1,12 +1,13 @@
-@mixin glass-div($opacity, $shadow: 0.25, $border-op: 0.25) {
+@mixin glass-div($opacity:0.05, $shadow: 0.25, $border-op: 0.25) {
     border-top: .5px solid rgba(255, 255, 255, $border-op);
     border-left: .5px solid rgba(255, 255, 255, $border-op);
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, $shadow);
     background: rgba(255, 255, 255, $opacity);
     backdrop-filter: blur(5px);
+    transition: all 0.5s ease-in;
     &:hover {
         transition: all 0.5s ease-in;
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, $shadow);
     }
 }
 
@@ -72,6 +73,7 @@ hr {
 .container-htu::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: transparent;
+    border-radius: 5px;
 }
 
 .container-htu::-webkit-scrollbar {

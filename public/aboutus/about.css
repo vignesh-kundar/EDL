@@ -9,8 +9,8 @@
 }
 
 .au-container .au-data {
-  height: 400px;
-  width: 300px;
+  height: 250px;
+  width: 320px;
   border-top: 0.5px solid rgba(255, 255, 255, 0.25);
   border-left: 0.5px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.05);
@@ -19,6 +19,7 @@
   -webkit-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
   border-radius: 10px;
+  font-family: poppins;
 }
 
 .au-container .au-data:hover {
@@ -29,33 +30,29 @@
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-.au-container .au-data .au-img {
-  height: 60%;
-  width: auto;
-  margin: 20px;
-  background-color: coral;
-  border-radius: 10px;
+.au-container .au-data h3 {
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 5px;
 }
 
-.au-container .au-data .au-names {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.au-container .au-data h4 {
+  padding: 5px 10px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.au-container .au-data .au-names p,
-.au-container .au-data .au-names a {
-  font-family: poppins;
-  color: white;
+.au-container .au-data ul li {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.au-container .au-data ul li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.au-container .au-data ul li a:hover {
+  color: rgba(255, 255, 255, 0.5);
 }
 /*# sourceMappingURL=about.css.map */
