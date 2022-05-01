@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 app.use(express.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
+const PORT = process.env.PORT || 3000;
+
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: true }));
@@ -28,7 +30,7 @@ const upload = require('./routes/upload')
 app.use('/fileupload', upload);
 
 
-const PORT = 3000;
+
 app.listen(PORT, () => {
     console.log(`Listening on ${ PORT }`);
 });
